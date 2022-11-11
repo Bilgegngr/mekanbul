@@ -61,7 +61,7 @@ const mekanBilgisi = function (req, res) {
       },
       "yorumlar":[
         {
-          "yorumYapan":"Deniz Özveren",
+          "yorumYapan":"Bilge Güngör",
           "puan":"3",
           "tarih":"22 Mayıs",
           "yorumMetni":" Çok beğendim"
