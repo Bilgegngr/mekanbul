@@ -1,96 +1,92 @@
 var express = require('express');
 var router = express.Router();
 
-
-
 const anaSayfa = function (req, res, next) {
-   res.render('anasayfa', { baslik: 'Ana sayfa',
-   'sayfaBaslik':{
-      'siteAd':'Mekanbul',
-      'slogan':'Civardaki Mekanları Keşfet!'
-   },
-   'mekanlar':[
+  res.render('anasayfa',
+   { "baslik": "Ana Sayfa",
+     "sayfaBaslik":{
+      "siteAd":"Mekanbul",
+      "slogan":"Civardaki Mekanları Keşfet!"
+     },
+     "mekanlar":[
+
       {
-         'ad':'Barida Kafe',
-         'adres':'Sdü Batı Kampüsü',
-         'puan':'5',
-         'mesafe':'2km',
-         'imkanlar':['Kahve','Çay','Pasta']
+        "ad":"Barida Kafe",
+        "adres":"Sdü Batı Kampüs",
+        "puan":"4",
+        "mesafe":"2km",
+        "imkanlar":["kahve","Çay","Pasta"]
       },
       {
-         'ad':'Gloria',
-         'adres':'Sdü Batı Kampüsü',
-         'puan':'4',
-         'mesafe':'5km',
-         'imkanlar':['Pankek','kahve','Pasta']
+        "ad":"Gloria Kafe",
+        "adres":"Sdü Doğu Kampüs",
+        "puan":"4",
+        "mesafe":"5km",
+        "imkanlar":["kahve","Çay","Pasta"]
+      },
+     ]
+     
+  
+  
+});
+}
+
+const mekanBilgisi = function (req, res) {
+  res.render('mekanbilgisi',
+  { "baslik": "Mekan bilgisi", 
+    "mekanBaslik":"Starbucks",
+    "mekanDetay":{
+      "ad":"Starbucks",
+      "adres":"Centrum Garden",
+      "puan":"4",
+      "saatler":
+      [
+        {
+        "gunler":"pazartesi - cuma",
+        "acilis":"9.00",
+        "kapanis":"23.00",
+        "kapali":false
+      },
+      {
+        "gunler":"cumartesi - pazar",
+        "acilis":"10.00",
+        "kapanis":"23.00",
+        "kapali":false
       }
-
-
-   ]
-
-
-});
-}
-
-const mekanBilgisi = function (req, res, next) {
-   res.render('mekanbilgisi', { baslik: 'Mekan bilgisi',
-   'mekanBaslik':'Barida Kafe',
-   'mekanDetay':{
-      'ad':'Barida Kafe',
-      'adres':'Bahçelievler',
-      'puan':'5',
-      'saatler':[
-         {
-            'gunler':'Pazartesi-Cuma',
-            'acilis':'9:00',
-            'kapanis':'23:00',
-            'kapali':'false'
-         },
-         {
-            'gunler':'Cumartesi-Pazar',
-            'acilis':'10:00',
-            'kapanis':'22:00',
-            'kapali':'false'
-         }
       ],
-      'imkanlar':['kahve','çay','pasta'],
-      'koordinatlar':{
-         'enlem':'37.7',
-         'boylam':'30.5'
+      "imkanlar":["kahve","çay","kek"],
+      "koordinatlar":{
+        "enlem":"37.7",
+        "boylam":"30.5"
       },
-      'yorumlar':[
-
-         {
-            'yorumYapan':'Sinan',
-            'puan':'3',
-            'tarih':'20 Ekim 2022',
-            'yorumMetni':'Çok berbat'
-         },
-         {
-            'yorumYapan':'Ali',
-            'puan':'5',
-            'tarih':'20 Ekim 2022',
-            'yorumMetni':'Süper'
-         }
+      "yorumlar":[
+        {
+          "yorumYapan":"Deniz Özveren",
+          "puan":"3",
+          "tarih":"22 Mayıs",
+          "yorumMetni":" Çok beğendim"
+        },
+        {
+          "yorumYapan":"Osman",
+          "puan":"3",
+          "tarih":"19 Ocak",
+          "yorumMetni":" Çok beğendim"
+        }
+        
       ]
-
-
-   }
-
+    }
 
 });
 }
 
-const yorumEkle = function (req, res, next) {
-   res.render('yorumekle', { title: 'Yorum ekle' });
+const yorumEkle = function (req, res) {
+  res.render('yorumekle', { "title": "Yorum ekle" });
 }
-
-
 
 module.exports = {
 
-   anaSayfa,
-   mekanBilgisi,
-   yorumEkle
+  anaSayfa,
+  mekanBilgisi,
+  yorumEkle
 
 }
