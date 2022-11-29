@@ -3,11 +3,11 @@ include fonksiyonlar/yildiz
 block content
   #banner.page-header 
     .row 
-      .col-lg-6 
+      .col-lg-6
         h1 
           | #{sayfaBaslik.siteAd} 
-          small &nbsp; #{sayfaBaslik.slogan}
-  .row
+          small &nbsp;  #{sayfaBaslik.slogan}
+  .row 
     each mekan in mekanlar
       .row.list-group 
       .col-xs-12.col-sm-12 
@@ -16,17 +16,12 @@ block content
             a(href='/mekan') #{mekan.ad}
             small &nbsp;
             +puanOlustur(mekan.puan)
-           
- 
           span.badge.pull-right.badge-default #{mekan.mesafe}
           p.address #{mekan.adres}
           p
-            each imkan in mekan.imkanlar 
+            each imkan in mekan.imkanlar
               span.label.label-warning #{imkan}
-              | &nbsp;
-               
-   
- 
+              |  &nbsp;
+           
     
-          
-    
+        
