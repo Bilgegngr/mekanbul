@@ -7,15 +7,22 @@ block content
         h1 
           | #{sayfaBaslik.siteAd} 
           small &nbsp; #{sayfaBaslik.slogan}
+<<<<<<< Updated upstream
   .row
+=======
+  .row 
+  .error=mesaj
+>>>>>>> Stashed changes
     each mekan in mekanlar
       .row.list-group 
       .col-xs-12.col-sm-12 
-        .col-xs-12.list-group-item 
+        .col-xs-12.list-group-item
           h4 
-            a(href='/mekan') #{mekan.ad}
+            -var mekanid=mekan._id
+            a(href='/mekan/'+mekanid)=mekan.ad
             small &nbsp;
             +puanOlustur(mekan.puan)
+<<<<<<< Updated upstream
            
  
           span.badge.pull-right.badge-default #{mekan.mesafe}
@@ -30,3 +37,18 @@ block content
     
           
     
+=======
+          span.badge.pull-right.badge-deafult #{mekan.mesafe}
+          p.address #{mekan.adres} 
+          p 
+            each imkan in mekan.imkanlar
+              span.label.label-warning #{imkan} 
+              | &nbsp;
+          
+  
+  
+
+        
+
+ 
+>>>>>>> Stashed changes
